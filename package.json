@@ -2,9 +2,10 @@
   "name": "vanilla-csr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/jekwan/vanilla-csr/issues"
   },
-  "homepage": "https://github.com/jekwan/vanilla-csr#readme"
+  "homepage": "https://github.com/jekwan/vanilla-csr#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  }
 }
