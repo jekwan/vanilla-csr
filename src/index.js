@@ -1,4 +1,9 @@
-import App from "./components/App";
+import Renderer from "./core/Renderer";
+import Element from "./core/Element";
 
-const app = new App(document.getElementById("app"));
-app.render();
+const renderer = new Renderer(
+  new Element("p", null, "Hello CSR"),
+  document.getElementById("app")
+);
+
+renderer.render();

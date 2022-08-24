@@ -8,6 +8,6 @@ export default class Renderer {
   }
 
   render() {
-    this.renderTarget.innerText = this.renderElement.el;
+    this.renderTarget.appendChild(this.renderElement.el);
   }
 }
