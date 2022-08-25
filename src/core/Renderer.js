@@ -1,13 +1,7 @@
 export default class Renderer {
-  renderElement;
-  renderTarget;
+  constructor() {}
 
-  constructor(renderElement, renderTarget) {
-    this.renderElement = renderElement;
-    this.renderTarget = renderTarget;
-  }
-
-  render() {
-    this.renderTarget.appendChild(this.renderElement.el);
+  render(renderElement, renderTarget) {
+    renderTarget.appendChild(renderElement.el);
   }
 }
