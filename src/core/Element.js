@@ -7,21 +7,23 @@ export default class Element {
     switch (typeof type) {
       case "string":
         el = document.createElement(type);
-        el.innerHTML = children.join("");
         break;
       case "function":
         el = new type().render();
-        el.innerHTML = children
-          .map(child => {
-            switch (typeof child) {
-              case "string":
-                return child;
-              case "function":
-                return child.render();
-            }
-          })
-          .join("");
         break;
+    }
+
+    for (const child of children) {
+      switch (typeof child) {
+        case "string":
+          const span = document.createElement("span");
+          span.innerHTML = child;
+          el.appendChild(span);
+          break;
+        case "function":
+          el.appendChild(new child().render());
+          break;
+      }
     }
 
     return el;
