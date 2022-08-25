@@ -2,6 +2,6 @@ export default class Renderer {
   constructor() {}
 
   static render(renderElement, renderTarget) {
-    renderTarget.appendChild(renderElement.el);
+    renderTarget.appendChild(renderElement);
   }
 }

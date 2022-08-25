@@ -1,15 +1,17 @@
 export default class Element {
-  el;
+  constructor() {}
 
-  constructor(type, props, ...children) {
+  static createElement(type, props, ...children) {
+    let el = ``;
+
     switch (typeof type) {
       case "string":
-        this.el = document.createElement(type);
-        this.el.innerHTML = children.join("");
+        el = document.createElement(type);
+        el.innerHTML = children.join("");
         break;
       case "function":
-        this.el = document.createElement(type);
-        this.el.innerHTML = children
+        el = new type().render();
+        el.innerHTML = children
           .map(child => {
             switch (typeof child) {
               case "string":
@@ -21,5 +23,7 @@ export default class Element {
           .join("");
         break;
     }
+
+    return el;
   }
 }

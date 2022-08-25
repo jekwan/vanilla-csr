@@ -1,8 +1,8 @@
 import Renderer from "./core/Renderer";
 import Element from "./core/Element";
-import Component from "./core/Component";
+import App from "./components/App";
 
 Renderer.render(
-  new Element("p", null, "Hello CSR"),
+  Element.createElement(App, null, "Hello CSR"),
   document.getElementById("app")
 );

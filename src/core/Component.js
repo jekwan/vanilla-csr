@@ -1,9 +1,11 @@
+import Element from "./Element";
+
 export default class Component {
-  renderTarget;
+  props;
   state;
 
-  constructor(renderTarget) {
-    this.renderTarget = renderTarget;
+  constructor(props) {
+    this.props = props;
   }
 
   render() {
